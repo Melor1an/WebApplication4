@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var selectQueryString = "SELECT * FROM Books ORDER BY Title";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>AddDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in que)
+            {
+                <tr>
+                    <td>@row.Id</td>
+                    <td>@row.Title </td>
+                    <td>@row.Description</td>
+                    <td>@row.AddDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
